@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>9gag</title>
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+     <link href="../../css/post.css" rel="stylesheet"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+      	9Gag
+      </a>
+      <a  href="/upload" class="btn btn-default navbar-btn">Upload</a>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+       <div th:if="${message}" class="row alert-fix">
+			<div class="alert alert-success" th:inline="text" role="alert">
+					<strong>[[${message}]]</strong>
+       		</div>
+	   </div>
+       <div class="container" th:each="post : ${postList}">	
+       <h3 th:text="${post.title}"><!-- TITLE --></h3>	
+       <div class="row row-fix">
+       		<img th:src="${post.imgSrc}" alt="..."/>
+       </div>
+       <div class="row row-fix" th:inline="text">
+       		[[${#numbers.formatDecimal(post.votes, 0, 0)}]] votes
+       		<!-- 
+       		<button type="button" class="btn btn-default" aria-label="Left Align">
+  				<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+			</button>
+			 -->
+       </div>	
+    </div>
+    </div>
+     
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../js/bootstrap.min.js"></script>
+  </body>
+</html>

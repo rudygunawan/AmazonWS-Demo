@@ -1,0 +1,19 @@
+.row-fix{
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+
+.alert-fix{
+    margin-left: 5px !important;
+    padding-left: 5px !important;
+    max-width:470px !important;
+}
+
+.row-top-fix{
+    margin-top: 10px !important;
+    padding-top: 10px !important;
+}
+
+span.glyphicon-heart {
+    font-size: 1.2em;
+}
